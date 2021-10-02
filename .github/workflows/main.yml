@@ -31,7 +31,9 @@ jobs:
             israeldoamaral/rotten-potatoes-k8s:${{ github.run_number }}
   
   CD:
+    needs: [CI]
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
       
@@ -39,4 +41,4 @@ jobs:
         uses: Azure/k8s-set-context@v1.1
         with:
           method: kubeconfig
-          kubeconfig: ${{ secrets.K8S_KUBECONFIG}}
+          kubeconfig: ${{ secrets.K8S_KUBECONFIG }}
