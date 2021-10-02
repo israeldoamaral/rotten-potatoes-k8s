@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: israeldoamaral/rotten-potatoes:v1
+          image: israeldoamaral/rotten-potatoes-k8s:v1
           ports: 
             - containerPort: 5000
           env: 
